@@ -23,11 +23,28 @@ func calcTotalDistance(list1, list2 []int) int {
 	return totalDistance
 }
 
+func calcSimilarityScore(list1, list2 []int) int {
+	freq2 := make(map[int]int)
+
+	for _, num := range list2 {
+		freq2[num]++
+	}
+
+	totalScore := 0
+	for _, num := range list1 {
+		if count, exists := freq2[num]; exists {
+			totalScore += count * num
+		}
+	}
+
+	return totalScore
+}
+
 func main() {
 	var list1, list2 []int
 
 	scanner := bufio.NewScanner(os.Stdin)
-	
+
 	for scanner.Scan() {
 		fields := strings.Fields(scanner.Text())
 		if len(fields) != 2 {
@@ -41,5 +58,6 @@ func main() {
 		list2 = append(list2, num2)
 	}
 
-	fmt.Println(calcTotalDistance(list1, list2))
+	// fmt.Println(calcTotalDistance(list1, list2))
+	fmt.Println(calcSimilarityScore(list1, list2))
 }

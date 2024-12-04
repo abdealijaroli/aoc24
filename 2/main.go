@@ -32,7 +32,6 @@ func calcSafeReports(reports [][]int) int {
 				break
 			}
 		}
-
 		if isSafe {
 			safeReports++
 		}

@@ -95,5 +95,5 @@ func main() {
 
 	if len(grid) > 0 {
 		fmt.Println(findLoopPositions(grid))
-	}
+	} 
 }

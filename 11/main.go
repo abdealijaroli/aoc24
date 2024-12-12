@@ -116,6 +116,6 @@ func main() {
         }
     }
 
-    stones := transformParallel(nums, 25)
+    stones := transformParallel(nums, 25)  // 75
     fmt.Println(len(stones))
 }
